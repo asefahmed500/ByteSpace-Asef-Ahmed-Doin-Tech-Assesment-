@@ -1,26 +1,97 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* ByteSpace brand palette */
+  --color-persian: #003be2; /* Persian Blue/800 */
+  --color-electric: #d4fb20; /* Electric Lime/400 */
+  --color-electric-500: #cbfc01; /* Electric Lime/500 */
+  --color-mindaro: #c1e338; /* Mindaro/400 */
+  --color-violet-cat: #7f30f7; /* Electric Violet/600 */
+
+  /* Shuttle Gray scale */
+  --color-sg-50: #f5f5f6;
+  --color-sg-100: #e5e6e8;
+  --color-sg-200: #ced0d3;
+  --color-sg-300: #abaeb5;
+  --color-sg-400: #82868e;
+  --color-sg-700: #4b4c53;
+  --color-sg-900: #3a3b3f;
+  --color-sg-950: #242528;
+
+  /* Neutrals used in the design */
+  --color-ink: #4f4f4f; /* Black/700 */
+  --color-vulcan: #040819; /* Vulcan/950 */
+
+  --font-satoshi: var(--nf-satoshi), ui-sans-serif, system-ui, sans-serif;
+  --font-poppins: var(--nf-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-clash: var(--nf-clash), var(--nf-satoshi), sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Layered drop shadow from the Figma hero image spec */
+.img-drop {
+  filter:
+    drop-shadow(0.5px 0.7px 3px rgb(0 0 0 / 0.04))
+    drop-shadow(2.2px 3.2px 5.7px rgb(0 0 0 / 0.06))
+    drop-shadow(5.4px 7.7px 9.6px rgb(0 0 0 / 0.07))
+    drop-shadow(10.2px 14.6px 16.1px rgb(0 0 0 / 0.08))
+    drop-shadow(16.9px 24.2px 24px rgb(0 0 0 / 0.09))
+    drop-shadow(25.8px 36.9px 36px rgb(0 0 0 / 0.10))
+    drop-shadow(37.1px 53px 56px rgb(0 0 0 / 0.105))
+    drop-shadow(51px 72.9px 72px rgb(0 0 0 / 0.13));
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* White blueprint grid used on the Persian Blue hero + CTA bands */
+.bg-blueprint {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.12) 2px, transparent 2px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.12) 2px, transparent 2px);
+  background-size: 120px 120px;
+  background-position: 0 0;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Soft brand glow blobs used behind the feature / testimonials sections */
+.blob-lime-strong {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgb(203 252 1 / 0.6) 0%,
+    rgb(203 252 1 / 0.138) 53%,
+    rgb(203 252 1 / 0.036) 75%,
+    rgb(203 252 1 / 0) 100%
+  );
+}
+.blob-lime {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgb(203 252 1 / 0.4) 0%,
+    rgb(203 252 1 / 0.092) 53%,
+    rgb(203 252 1 / 0.024) 75%,
+    rgb(203 252 1 / 0) 100%
+  );
+}
+.blob-blue {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgb(0 59 226 / 0.24) 0%,
+    rgb(0 59 226 / 0.0552) 53%,
+    rgb(0 59 226 / 0.0144) 75%,
+    rgb(0 59 226 / 0) 100%
+  );
+}
+.blob-blue-soft {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgb(0 59 226 / 0.16) 0%,
+    rgb(0 59 226 / 0.0368) 53%,
+    rgb(0 59 226 / 0.0096) 75%,
+    rgb(0 59 226 / 0) 100%
+  );
+}
+.blob-blue-faint {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgb(0 59 226 / 0.08) 0%,
+    rgb(0 59 226 / 0.0184) 53%,
+    rgb(0 59 226 / 0.0048) 75%,
+    rgb(0 59 226 / 0) 100%
+  );
 }

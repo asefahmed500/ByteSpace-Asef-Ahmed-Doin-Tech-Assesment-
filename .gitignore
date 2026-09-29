@@ -39,3 +39,19 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.vercel
+
+# claude code local files
+.claude/
+CLAUDE.md.local
+
+# test screenshots & scratch
+/tmp_assets/
+
+# reference frames / unused test images (not site assets)
+/public/Hero_Frame.png
+/public/CTA_Frame.png
+/public/Frame*.png
+/public/image.png
+/public/avatar-stack-hero.png
